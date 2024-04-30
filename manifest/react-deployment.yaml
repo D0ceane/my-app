@@ -25,6 +25,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: myapp
+  namespace: default
 spec:
   destination:
     server: 'https://kubernetes.default.svc'
