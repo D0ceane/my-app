@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp
+  name: react-deployment
   labels:
-    app: react-app
+    app: react
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: react-app
+      app: react
   template:
     metadata:
       labels:
-        app: react-app
+        app: react
     spec:
       containers:
         - name: react-app
@@ -20,7 +20,7 @@ spec:
           ports:
             - containerPort: 3000
 ---
-apiVersion: argoproj.io/v1alpha1
+apiVersion: apps/v2
 kind: Application
 metadata:
   name: myapp
