@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: react-app
+  name: myapp
   labels:
     app: react-app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: react-app
+      app: my-app
   template:
     metadata:
       labels:
@@ -19,3 +19,7 @@ spec:
           image: react:latest
           ports:
             - containerPort: 3000
+      source:
+        path: .
+        exclude:
+            - '**/jsconfig.json'
