@@ -21,7 +21,7 @@ spec:
             - containerPort: 3000
 ---
 apiVersion: apps/v2
-kind: Ingress
+kind: Deployment
 metadata:
   name: myapp
 spec:
